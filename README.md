@@ -15,38 +15,38 @@ If this file is missing or a filename hash does not match any record in this fil
 Note: All hashes are prefixed with a `DWORD` string length.
 All strings are capitalized and path separators are backslashes (\\).
 All values are little endian.
+
 *This structure has not been double checked, please refer to code and if errors found fix the below structures*
 
 ### RCFS Dat File
-```cs
-000 DWORD Magic = 'RCFS'
-004 DWORD Version = 1 // not checked
-008 QWORD Unknown // not used, might be vestigial from SFFS FileCount
+```js
+0x000 DWORD Magic = 'RCFS'
+0x004 DWORD Version = 1 // not checked
+0x008 QWORD Unknown // not used, might be vestigial from SFFS FileCount
 // -- Start AES encryption 1
 // Key  = SHA256 of archive filename
 // IV   = MD5 of archive filename
 // Mode = CBC (XOR cascades)
-010 DWORD RecordCount // Can read as unsigned QWORD, count of records
-014 DWORD Pad
-018 DWORD Size // Can read as unsigned QWORD, whole archive file's size
-01C DWORD Pad
-020 STRCT Record[]
+0x010 DWORD RecordCount // Can read as unsigned QWORD, count of records
+0x014 DWORD Pad
+0x018 DWORD Size // Can read as unsigned QWORD, whole archive file's size
+0x01C DWORD Pad
+0x020 STRCT Record[]
 // -- End AES encryption 1
 ```
 
 ### Record Structure
-```cs
-// 
-000 BYTE FilenameMD5[16] // MD5 of filename, need pre-knowledge of filenames to match
+```js
+0x000 BYTE FilenameMD5[16] // MD5 of filename, need pre-knowledge of filenames to match
 // Start AES encryption 2 (nested)
 // Key  = SHA256 of reversed record filename
 // IV   = {0}
 // Mode = ECB (Only 1 block so no XOR to cascade)
 // Pad  = None
-010 DWORD Offset // Can read as unsigned QWORD, offset of file contents start
-014 DWORD Pad
-018 DWORD Length // Can read as unsigned QWORD, length of file contents
-01C DWORD Pad
+0x010 DWORD Offset // Can read as unsigned QWORD, offset of file contents start
+0x014 DWORD Pad
+0x018 DWORD Length // Can read as unsigned QWORD, length of file contents
+0x01C DWORD Pad
 // -- End AES encryption 2
 ```
 
@@ -55,12 +55,12 @@ All values are little endian.
 * Read full length of file up to next boundary + 1 extra block
 * Remove alignment padding for decrypted data
 * XOR each AES block (16 bytes) by file offset as a 16 byte number (or rather simply the first QWORD of the block)
-```cs
+```js
 // Start AES encryption 2 (nested)
 // Key  = SHA256 of reversed record filename
 // IV   = {0} ( manually XOR the file offset for each block)
 // Mode = ECB
 // Pad  = None
-??? STRCT Data[]
+0x000 BYTE Data[]
 // -- End AES encryption 2
 ```
