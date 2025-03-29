@@ -56,7 +56,7 @@ All values are little endian.
 * Remove alignment padding for decrypted data
 * XOR each AES block (16 bytes) by file offset as a 16 byte number (or rather simply the first QWORD of the block)
 ```js
-// Start AES encryption 2 (nested)
+// Start AES encryption 2 (not nested)
 // Key  = SHA256 of reversed record filename
 // IV   = {0} ( manually XOR the file offset for each block)
 // Mode = ECB
