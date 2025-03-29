@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCFS_Extract", "RCFS_Extract\RCFS_Extract.csproj", "{1691E647-3044-46CB-8D8B-92CCF65A65BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseNoOptimization|Any CPU = ReleaseNoOptimization|Any CPU
+		ReleaseNoOptimization|x64 = ReleaseNoOptimization|x64
+		ReleaseNoOptimization|x86 = ReleaseNoOptimization|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|x64.Build.0 = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.Release|x86.Build.0 = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|Any CPU.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|Any CPU.Build.0 = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|x64.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|x64.Build.0 = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|x86.ActiveCfg = Release|Any CPU
+		{1691E647-3044-46CB-8D8B-92CCF65A65BB}.ReleaseNoOptimization|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
