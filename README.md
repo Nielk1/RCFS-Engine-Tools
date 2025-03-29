@@ -54,7 +54,7 @@ All values are little endian.
 * Align read the nearest AES block size (16 byte) boundary
 * Read full length of file up to next boundary + 1 extra block
 * Remove alignment padding for decrypted data
-* XOR each AES block (16 bytes) by file offset as a 16 byte number (or rather simply the first QWORD of the block)
+* XOR each AES block (16 bytes) by file offset as a 16 byte number (or rather simply the first DWORD of the block)
 ```js
 // Start AES encryption 2 (not nested)
 // Key  = SHA256 of reversed record filename
